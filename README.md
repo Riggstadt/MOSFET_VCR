@@ -18,6 +18,24 @@ I_{D}=\frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left(V_{GS}-V_{T}\right)^{2}\cdo
 $I_{D}=f\left(V_{GS},V_{DS}\right)$
 $I_{D}=G_{m}\cdot V_{GS} + G_{o}\cdot V_{DS}$
 $G_{m}=\frac{\partial I_{D}}{\partial V_{GS}}$
+
+Some thoughts on this:
+I encountered some difficulties in understanding the difference between small signal and large signal models of the FET. I now firmly understand the differences and similarities between the two.
+
+We are mainly interested in the large signal model of the FET in the triode region. As we approach the transition region between linear and saturation regions we encounter more and more non-linearities. At very low voltages, way below pinchoff voltage we enter the deep triode region and the nonlinearities present at highter voltages can be neglected as we simulate the FET as a voltage controlled resistor.
+Large Signal Model for FETs
+https://www.tina.com/resources/home/field-effect-transistor-amplifiers-2/2-metal-oxide-semiconductor-fet-mosfet/
+
+Derivation of small signal model for FETs
+https://inst.eecs.berkeley.edu//~ee105/fa98/lectures_fall_98/091898_lecture11.pdf
+
+How the calculus works
+https://electronics.stackexchange.com/questions/179592/small-signal-models-of-mos-amplifiers
+
+More in-depth material
+https://services.montefiore.uliege.be/microelec/uploads/ELEN0037/Lectures/Lecture%202%20Revision%20MOSFET%20Operation%20and%20Modelling.pdf
+
+
 ## LINEARIZING MOSFET ON RESISTANCE
 ## LINEAR GAIN CONTROLLED AMPLIFIER
 ## CONCLUSIONS
