@@ -35,6 +35,9 @@ https://electronics.stackexchange.com/questions/179592/small-signal-models-of-mo
 More in-depth material
 https://services.montefiore.uliege.be/microelec/uploads/ELEN0037/Lectures/Lecture%202%20Revision%20MOSFET%20Operation%20and%20Modelling.pdf
 
+Small-signal Triode Region
+https://www.youtube.com/watch?app=desktop&v=x4m8GwOdHhk&ab_channel=techgurukula
+
 
 ## LINEARIZING MOSFET ON RESISTANCE
 ## LINEAR GAIN CONTROLLED AMPLIFIER
