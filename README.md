@@ -25,10 +25,14 @@ So, $R_{DS}$ is equal to $\frac{1}{\mu C_{ox}\frac{W}{L}\cdot\left(V_{GS}-V_{T}\
 The MOSFET is now akin to a variable resistor, controlled by $V_{GS}$.
 [imagine rezistor variabil si MOSFET]
 
-We also introduce the notion of $R_{DS(on)}$, the drain-to-source resistance of the FET when $V_{GS}$ is equal to zero, which is also the minimum on resistance of the device. So for any particular $V_{GS}$ we can use this formula:
-$$R_{DS}$$
+We also introduce the notion of $R_{DS(on)}$, the drain-to-source resistance of the FET when $V_{GS}$ is equal to zero, which is also the minimum on resistance of the device. So for any particular $V_{GS}$ we can derive the following formula to determine the value of the on resistance:
+$$R_{DS(on)}=\frac{1}{\mu C_{ox}\frac{W}{L}\cdot\left(-V_{T}\right)}$$
 
-Small-signal model for VCR
+$$\frac{R_{DS(on)}}{R_{DS}}=\frac{\mu C_{ox}\frac{W}{L}\cdot\left(V_{GS}-V_{T}\right)}{\mu C_{ox}\frac{W}{L}\cdot\left(-V_{T}\right)}=\frac{V_{GS}-V_{T}}{-V_{T}}$$
+
+$$R_{DS}=R_{DS(on)}\cdot \frac{-V_{T}}{V_{GS}-V_{T}}=\frac{R_{DS(on)}}{1-\frac{V_{GS}}{V_{T}}}$$
+
+### Small-signal model for VCR
 If we desire to use the MOSFET for small-signal AC applications we must take into account that for a given excursion $v_{ds}$ around the bias point of the FET we get: $v_{DS} = V_{DS} + v_{ds}$, where $v_{ds}$ is the applied AC signal at the FET's Drain. We are practically using the superposition principle and overlaying the large- and small-signal models of the FET in order to precisely simulate the operational behaviour.
 
 If there are no AC variations in the gate-to-source voltage, the overall drain current equations reduces to this form: $i_{D}=I_{D}+i_{d}=I_{D}+g_{ds}\cdot v_{ds}= I_{D}+\frac{\partial I_{D}}{V_{DS}}\cdot v_{ds}$, where $\frac{\partial I_{D}}{V_{DS}}$ is equal unsurprisingly to $\mu C_{ox}\frac{W}{L}\left(V_{DS}-V_{T}\right)$.
@@ -56,10 +60,18 @@ https://www.youtube.com/watch?app=desktop&v=x4m8GwOdHhk&ab_channel=techgurukula
 Up until now we've neglected the non-linear terms of the triode region FET model. There are circumstances in which this terms become important and can affect the ohmic characteristics of the transitor. To remedy this we seek to linearize the $R_{DS}$.
 
 $$I_{D}=\frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left[2\(V_{GS}-V_{T}\)V_{DS}-V_{DS}^{2}\right]$$
-Taking the partial derivative w.r.t. $V_{DS}$ we obtain: $R_{DS}= \frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left[2\(V_{GS}-V_{T}\)-2V_{DS}\right]$.
-We need to get rid of 
+Dividing $I_{D}$ by $V_{DS}$ we obtain: $R_{DS}= \mu_{n}C_{ox}\frac{W}{L}\cdot \left[V_{GS}-V_{T}-\frac{V_{DS}}{2}\right]$.
+We need to get rid of $V_{DS}$ from the formula of $R_{DS}$. How do we do that? We use two very high value resistors (think 0.5 to 1 $M\Omega$) to form a potential divider with $V_{GS}$ as the midway point and $V_{DS}$ and a new control voltage $V_{C}$ at the opposite ends. It follows that $V_{GS} = \frac{V_{C}+V_{DS}}{2}$.
+
+Rewriting $\frac{1}{R_{DS}}$ we can see that the two $V_{DS}$ terms cancel each other and we obtain a pleasant $V_{DS}$-independent relationship between the control voltage and the device resistance:
+$$\frac{1}{R_{DS}}=\mu_{n}C_{ox}\frac{W}{L}\cdot \left(\frac{V_{C}+V_{DS}}{2}-V_{T}-\frac{V_{DS}}{2}\right)=\mu_{n}C_{ox}\frac{W}{L}\cdot \left(\frac{V_{C}}{2}-V_{T}\right)$$
 
 ## LINEAR GAIN CONTROLLED AMPLIFIER
+We can now build a non-inverting operation amplifier with variable gain by exchanging one of the feedback resistors with a MOSFET.
+The gain of the amplifier shown below will be $A=1+\frac{R_{f}}{R_{DS}}$.
+[imagine opamp cu rezistenta variabila]
+The most important design constraint when building the amplifier circuit is the limited amplitude of the input signal, as it should be always under 100mV or even lower. We can choose to further linearize the equivalent MOSFET on resistance as shown above, but the effects will be limited as $V_{DS}$ is quite small. A significant difference between the linearized $R_{DS}$ circuit and the regular one will be that for any given $V_{GS}$ the control voltage $V_{C}$ of the linearized VCR will be double the desired $V_{GS}$. So the linearized VCR will have a narrower range of possible values, when compared to its regular counterpart.
+
 ## CONCLUSIONS
 ## SOURCES
 Finite output resistance of MOSFET:
