@@ -8,21 +8,16 @@ VCRs can be useful on their own, as part of voltage dividers, but their usefulne
 ![image](https://github.com/Riggstadt/MOSFET_VCR/assets/127757267/e0c75924-6b7c-456c-9084-384cf711055f)
 
 $$\begin{cases}
-I_{D}=\frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left[2\(V_{GS}-V_{T}\)V_{DS}-V_{DS}^{2}\right]\cdot \(1+\lambda V_{DS}\)\quad\text{for}\quad V_{GS}>V_{T}\quad\text{and}\quad V_{DS}\leq V_{GS}-V_{T}\\
+I_{D}=\frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left[2\(V_{GS}-V_{T}\)V_{DS}-V_{DS}^{2}\right]\quad\text{for}\quad V_{GS}>V_{T}\quad\text{and}\quad V_{DS}\leq V_{GS}-V_{T}\\
 \\
 I_{D}=\frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left(V_{GS}-V_{T}\right)^{2}\cdot \(1+\lambda V_{DS}\)\quad\text{for}\quad V_{GS}>V_{T}\quad\text{and}\quad V_{DS}\geq V_{GS}-V_{T}\\
 \end{cases}$$
 
-
-/****/
-$I_{D}=f\left(V_{GS},V_{DS}\right)$
-$I_{D}=G_{m}\cdot V_{GS} + G_{o}\cdot V_{DS}$
-$G_{m}=\frac{\partial I_{D}}{\partial V_{GS}}$
-
-Some thoughts on this:
-I encountered some difficulties in understanding the difference between small signal and large signal models of the FET. I now firmly understand the differences and similarities between the two.
-
 We are mainly interested in the large signal model of the FET in the triode region. As we approach the transition region between linear and saturation regions we encounter more and more non-linearities. At very low voltages, way below pinchoff voltage we enter the deep triode region and the nonlinearities present at highter voltages can be neglected as we simulate the FET as a voltage controlled resistor.
+
+So, for $V_{DS} << 2\cdot\left(V_{GS}-V_{T}\right)$ we get $I_{D}=\mu C_{ox}\frac{W}{L}\left(V_{GS}-V_{T}\right)V_{DS}$. For higher sub-pinchoff voltages we get more non linear terms and have to contend with a more complex characteristic equation: $I_{D}=\mu C_{ox}\frac{W}{L}\left[\left(V_{GS}-V_{T}\right)V_{DS}-\frac{V_{DS}^{2}}{2}\right]$.
+
+Now we can simply calcula
 Large Signal Model for FETs
 https://www.tina.com/resources/home/field-effect-transistor-amplifiers-2/2-metal-oxide-semiconductor-fet-mosfet/
 
