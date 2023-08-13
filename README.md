@@ -17,7 +17,25 @@ We are mainly interested in the large signal model of the FET in the triode regi
 
 So, for $V_{DS} << 2\cdot\left(V_{GS}-V_{T}\right)$ we get $I_{D}=\mu C_{ox}\frac{W}{L}\left(V_{GS}-V_{T}\right)V_{DS}$. For higher sub-pinchoff voltages we get more non linear terms and have to contend with a more complex characteristic equation: $I_{D}=\mu C_{ox}\frac{W}{L}\left[\left(V_{GS}-V_{T}\right)V_{DS}-\frac{V_{DS}^{2}}{2}\right]$.
 
-Now we can simply calcula
+The formula for the drain-to-source resistance ($R_{DS}$), when the transistor is driven into the **deep triode** region, is derived as follows:
+$$\frac{1}{R_{DS}}=\frac{\partial I_{D}}{\partial V_{DS}}=\frac{\partial \mu C_{ox}\frac{W}{L}\cdot\left(V_{GS}-V_{T}\right)\cdot V_{DS}}{\partial V_{DS}}=\mu C_{ox}\frac{W}{L}\cdot\left(V_{GS}-V_{T}\right)$$
+
+So, $R_{DS}$ is equal to $\frac{1}{\mu C_{ox}\frac{W}{L}\cdot\left(V_{GS}-V_{T}\right)}$ for very low $V_{DS}$.
+
+The MOSFET is now akin to a variable resistor, controlled by $V_{GS}$.
+[imagine rezistor variabil si MOSFET]
+
+We also introduce the notion of $R_{DS(on)}$, the drain-to-source resistance of the FET when $V_{GS}$ is equal to zero, which is also the minimum on resistance of the device. So for any particular $V_{GS}$ we can use this formula:
+$$R_{DS}$$
+
+Small-signal model for VCR
+If we desire to use the MOSFET for small-signal AC applications we must take into account that for a given excursion $v_{ds}$ around the bias point of the FET we get: $v_{DS} = V_{DS} + v_{ds}$, where $v_{ds}$ is the applied AC signal at the FET's Drain. We are practically using the superposition principle and overlaying the large- and small-signal models of the FET in order to precisely simulate the operational behaviour.
+
+If there are no AC variations in the gate-to-source voltage, the overall drain current equations reduces to this form: $i_{D}=I_{D}+i_{d}=I_{D}+g_{ds}\cdot v_{ds}= I_{D}+\frac{\partial I_{D}}{V_{DS}}\cdot v_{ds}$, where $\frac{\partial I_{D}}{V_{DS}}$ is equal unsurprisingly to $\mu C_{ox}\frac{W}{L}\left(V_{DS}-V_{T}\right)$.
+
+After all is said and done, the overarching equation for the FET when biased in the deep triode region and supplied at its drain with a small AC signal is this:
+$$i_{D}=\mu C_{ox}\frac{W}{L}\left(V_{DS}-V_{T}\right)\cdot\left(V_{DS}+v_{ds}\right)$$.
+
 Large Signal Model for FETs
 https://www.tina.com/resources/home/field-effect-transistor-amplifiers-2/2-metal-oxide-semiconductor-fet-mosfet/
 
@@ -35,6 +53,12 @@ https://www.youtube.com/watch?app=desktop&v=x4m8GwOdHhk&ab_channel=techgurukula
 
 
 ## LINEARIZING MOSFET ON RESISTANCE
+Up until now we've neglected the non-linear terms of the triode region FET model. There are circumstances in which this terms become important and can affect the ohmic characteristics of the transitor. To remedy this we seek to linearize the $R_{DS}$.
+
+$$I_{D}=\frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left[2\(V_{GS}-V_{T}\)V_{DS}-V_{DS}^{2}\right]$$
+Taking the partial derivative w.r.t. $V_{DS}$ we obtain: $R_{DS}= \frac{1}{2}\mu_{n}C_{ox}\frac{W}{L}\cdot \left[2\(V_{GS}-V_{T}\)-2V_{DS}\right]$.
+We need to get rid of 
+
 ## LINEAR GAIN CONTROLLED AMPLIFIER
 ## CONCLUSIONS
 ## SOURCES
