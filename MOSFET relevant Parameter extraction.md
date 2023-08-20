@@ -20,7 +20,15 @@ I attempted to determine the value of $V_{T}$ with the help of several distinct 
 ### The Constant Current Method
 This method works by setting a current source to output a constant, voltage independent drain current $I_{D}$ = 250 $\mu A$ into the Drain, which is shorted to the Gate of the device.
 
-[imagine CCS]
+<p height = "250" align="center">
+    <img src = "CCS.png">
+    <br>
+    <br>
+    <a><b>CCS implementation</b></a>
+</p>
+<br>
+<br>
+
 
 The CCS was built from a JFET and a resistor, a combination also called "constant current diode", as it can be seen in the figure from above.
 The output current of the source is dictated by the resistance, which for a desired current $I_{D}$ has this formula: $R_{S}=\frac{V_{GS(off)}\cdot\left(1-\sqrt{\frac{I_{D}}{I_{DSS}}}\right)}{I_{D}}$. On the bench the fixed resistor was supplanted by a potentiometer to avoid having to extract the values of $I_{DSS}$ and $V_{GS(off)}$ for the specific transistor in use.
@@ -30,7 +38,14 @@ In our specific example the potentiometer was set to 2.922 $K\Omega$ and $I_{D}$
 #### Notes on alternative arrangements for a CCS
 An active device is not always required for this method, as a quicker, bench-friendlier method is to just measure $V_{GS}$ when the FET is supplied through a 0.1/1/10 $M\Omega$ resistor and the current is closer to another industry-standard current benchmark: $I_{test}=100 nA\cdot \frac{W}{L}$
 
-[imagine metoda rez 1Meg]
+<p height = "250" align="center">
+    <img src = "1M.png">
+    <br>
+    <br>
+    <a><b>Simpler bench-friendly test method</b></a>
+</p>
+<br>
+<br>
 
 ### Linear Extrapolation in Saturation Region
 This method necessitates the use of a diode-connected MOSFET and a variable supply voltage. Whilst performing the measurement and calculations, we must acknowledge that above the threshold voltage the FET is saturated because: $V_{GS}=V_{DS}$, $V_{GS}-V_{T} = V_{DS}-V_{T} < V_{DS}$
@@ -46,16 +61,47 @@ For $V_{DS}>4\cdot U_{t}$ the formula simplifies to: $I_{D}=I_{S}\cdot e^{\frac{
 Above $V_{GS}$ = $V_{T}$, $\sqrt{I_{D}}$ will be linear and equal to $K\cdot (V_{GS}-V_{t})$. We take two points in the linear region of the graph and define the line passing through, where $V_{T}$ is to be its X-intercept.
 
 The test circuit looks like this:
-[imagine circuit LESR]
+
+<p height = "250" align="center">
+    <img src = "VARVOLT.png">
+    <br>
+    <br>
+    <a><b>Linear Extrapolation in Saturation Region test circuit implementation</b></a>
+</p>
+<br>
+<br>
 
 The gathered data points are represented below:
-[imagine datapoints, fara alte curbe]
+
+<p height = "250" align="center">
+    <img src = "just_the_tip.png">
+    <br>
+    <br>
+    <a><b>Experimentally obtained data points</b></a>
+</p>
+<br>
+<br>
 
 And this is how the threshold voltage is determined graphically:
-[poza cu grafic si linie]
+
+<p height = "250" align="center">
+    <img src = "download.png">
+    <br>
+    <br>
+    <a><b>Linear approximation and graphical threshold voltage determination</b></a>
+</p>
+<br>
+<br>
 
 And here we have an approximation for the characteristic equation in the subthreshold region:
-[grafic subthreshold]
+
+<p height = "250" align="center">
+    <img src = "exponential_hold.png">
+    <br>
+    <br>
+    <a><b>Subthreshold Region and characteristic equation</b></a>
+</p>
+<br>
 
 $$ \begin{cases}
 I_{D1}=I_{S}\cdot e^{\frac{V_{GS1}}{\zeta U_{t}}}\\
@@ -63,7 +109,11 @@ I_{D1}=I_{S}\cdot e^{\frac{V_{GS1}}{\zeta U_{t}}}\\
 I_{D2}=I_{S}\cdot e^{\frac{V_{GS2}}{\zeta U_{t}}}
 \end{cases}$$
 
+<br>
+
 $$\zeta = \frac{V_{GS1}-V_{GS2}}{U_{t}\cdot ln\left(\frac{I_{D1}}{I_{D2}}\right)}$$
+
+<br>
 
 $$I_{S}=\frac{I_{D}}{e^{\frac{V_{GS}}{\zeta U_{t}}}}$$
 
