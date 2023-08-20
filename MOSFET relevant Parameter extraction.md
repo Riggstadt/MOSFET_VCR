@@ -58,7 +58,7 @@ $$I_{D}=I_{S}\cdot e^{\frac{V_{GS}}{\zeta U_{t}}}\cdot\left(1-e^{-\frac{V_{DS}}{
 
 For $V_{DS}>4\cdot U_{t}$ the formula simplifies to: $I_{D}=I_{S}\cdot e^{\frac{V_{GS}}{\zeta U_{t}}}$, where $U_{t}$ is the thermal voltage and $\zeta$ is the non-ideality factor. In our test circuit $V_{DS}$ and $V_{GS}$ will be equal.
 
-Above $V_{GS}$ = $V_{T}$, $\sqrt{I_{D}}$ will be linear and equal to $K\cdot (V_{GS}-V_{t})$. We take two points in the linear region of the graph and define the line passing through, where $V_{T}$ is to be its X-intercept.
+Above $V_{GS}$ = $V_{T}$, $\sqrt{I_{D}}$ will be linear and equal to $K\cdot (V_{GS}-V_{T})$. We take two points in the linear region of the graph and define the line passing through, where $V_{T}$ is to be its X-intercept.
 
 The test circuit looks like this:
 
@@ -134,13 +134,13 @@ $$ V_{T} = \frac{ -2 (V_{GS2} I_{D1} - V_{GS1} I_{D2} ) }{ 2 (I_{D2} - I_{D1}) }
 
 After we numerically determine the solutions, we check that $V_{T}$ is to the left of both $V_{GS}$ values used.
 
-## Conclusions
+### Conclusions
 - There are a **lot** of testing methods for $V_{T}$
 - Linear interpolation and log-fitting are better options for parameter extraction, but require more time and resources
 - Rough values are better than no values
 - Better equipment, better results
 
-## Sources and Useful Resources
+### Sources and Useful Resources
 - https://www.scirp.org/journal/paperinformation.aspx?paperid=72393
 - http://web02.gonzaga.edu/faculty/talarico/EE303/HO/squarelawIssues.pdf
 - https://2n3904blog.com/sub-threshold-conduction-of-a-power-mosfet/
