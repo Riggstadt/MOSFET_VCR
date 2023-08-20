@@ -134,13 +134,20 @@ $$ V_{T} = \frac{ -2 (V_{GS2} I_{D1} - V_{GS1} I_{D2} ) }{ 2 (I_{D2} - I_{D1}) }
 
 After we numerically determine the solutions, we check that $V_{T}$ is to the left of both $V_{GS}$ values used.
 
-### Conclusions
+## Determination of Channel Length Modulation Factor "$\lambda$"
+To find the value of $\lambda$ we pick two bias points inside the saturation region
+
+## Determination of Technology Constant "K"
+For a quick and dirty solution, we just bias the FET into the saturation region and input into the characteristic equation the now known values of $V_{T}$ and $\lambda$, then K is $\frac{I_{D}}{(V_{GS}-V_{T})^{2}\cdot (1+\lambda V_{DS})}$.
+
+
+## Conclusions
 - There are a **lot** of testing methods for $V_{T}$
 - Linear interpolation and log-fitting are better options for parameter extraction, but require more time and resources
 - Rough values are better than no values
 - Better equipment, better results
 
-### Sources and Useful Resources
+## Sources and Useful Resources
 - https://www.scirp.org/journal/paperinformation.aspx?paperid=72393
 - http://web02.gonzaga.edu/faculty/talarico/EE303/HO/squarelawIssues.pdf
 - https://2n3904blog.com/sub-threshold-conduction-of-a-power-mosfet/
