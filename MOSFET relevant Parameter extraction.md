@@ -134,8 +134,21 @@ $$ V_{T} = \frac{ -2 (V_{GS2} I_{D1} - V_{GS1} I_{D2} ) }{ 2 (I_{D2} - I_{D1}) }
 
 After we numerically determine the solutions, we check that $V_{T}$ is to the left of both $V_{GS}$ values used.
 
-## Determination of Channel Length Modulation Factor "$\lambda$"
-To find the value of $\lambda$ we pick two bias points inside the saturation region
+## Determination of Channel Length Modulation Factor " $\lambda$ "
+To find the value of $\lambda$ we pick two bias points inside the saturation region and create a system of two equations and one unknown, the CLM Factor. We keep $V_{GS}$ constant and sweep $V_{DS}$ to find the two suitable measurement points.
+
+$$\begin{cases}
+I_{D1}=K\cdot(V_{GS}-V_{T})^{2}\cdot (1+\lambda V_{DS1})\\
+\\
+I_{D2}=K\cdot(V_{GS}-V_{T})^{2}\cdot (1+\lambda V_{DS2})\\
+\end{cases}$$
+
+$$\frac{I_{D1}}{I_{D2}}=\frac{1+\lambda V_{DS1}}{1+\lambda V_{DS2}}$$
+$$I_{D1}\cdot (1+\lambda V_{DS2})=I_{D2}\cdot (1+\lambda V_{DS1})=$$
+
+And so the formula for $\lambda$ is $\lambda=\frac{I_{D1}-I_{D2}}{I_{D2}V_{DS1}-I_{D1}V_{DS2}}$.
+
+The CLM Factor can also be derived from the formula for the static resistance of the FET in the saturation region. $R_{DS}$ can be approximated as $\frac{1}{\lambda I_{D}}$, the FET's equivalent resistance can be graphically determined from the IV characteristic by taking the slope of the graph. So $\lambda$ will be equal to $\frac{1}{R_{DS} I_{D}}$.
 
 ## Determination of Technology Constant "K"
 For a quick and dirty solution, we just bias the FET into the saturation region and input into the characteristic equation the now known values of $V_{T}$ and $\lambda$, then K is $\frac{I_{D}}{(V_{GS}-V_{T})^{2}\cdot (1+\lambda V_{DS})}$.
