@@ -103,6 +103,8 @@ And here we have an approximation for the characteristic equation in the subthre
 </p>
 <br>
 
+The parameters needed for plotting the IV characteristic can be extracted with the help of the formulas presented below:
+
 $$ \begin{cases}
 I_{D1}=I_{S}\cdot e^{\frac{V_{GS1}}{\zeta U_{t}}}\\
 \\ 
