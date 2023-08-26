@@ -1,12 +1,5 @@
 # TO DO
-In the other one finish the extraction of lambda
-Here I will build a simple non-inverting op-amp with the LM358p chips
-formula for amplification referenced to both Rds = bla bla and Rdson and what not
-
-first I test the formulas on potential divider at a low fixed VDS and see how close we get with our theoretical methods
-
-and I also test where the linearity stops and the knee kicks in. How? I pass the low voltage ramp from the function generator to the drain at a fixed VGS > VT
-
+For the time being building the VGA is canceled. 
 # TO DO RAMP GENERATOR
 - Build on perf board
 - Replace PNP current source with JFET CCS
