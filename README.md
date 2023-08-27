@@ -72,7 +72,7 @@ If there are no AC variations in the gate-to-source voltage, the overall drain c
 <br>
 After all is said and done, the overarching equation for the FET when biased in the deep triode region and supplied at its drain with a small AC signal looks like this:
 
-$$i_{D}=\mu C_{ox}\frac{W}{L}\left(V_{DS}-V_{T}\right)\cdot\left(V_{DS}+v_{ds}\right)$$.
+$$i_{D}=\mu C_{ox}\frac{W}{L}\left(V_{GS}-V_{T}\right)\cdot\left(V_{DS}+v_{ds}\right)$$.
 
 ## LINEARIZING MOSFET ON RESISTANCE
 Up until now we've neglected the non-linear terms of the triode region FET model. There are circumstances in which this terms become important and can affect the ohmic characteristics of the transitor. To remedy this we seek to linearize the $R_{DS}$.
