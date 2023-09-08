@@ -67,7 +67,7 @@ $$R_{DS}=R_{DS(on)}\cdot \frac{-V_{T}}{V_{GS}-V_{T}}=\frac{R_{DS(on)}}{1-\frac{V
 If we desire to use the MOSFET for small-signal AC applications we must take into account that for a given excursion $v_{ds}$ around the bias point of the FET we get: $v_{DS} = V_{DS} + v_{ds}$, where $v_{ds}$ is the applied AC signal at the FET's Drain. We are practically using the superposition principle and overlaying the large- and small-signal models of the FET in order to precisely simulate the operational behaviour.
 <br>
 <br>
-If there are no AC variations in the gate-to-source voltage, the overall drain current equations reduces to this form: $i_{D}=I_{D}+i_{d}=I_{D}+g_{ds}\cdot v_{ds}= I_{D}+\frac{\partial I_{D}}{V_{DS}}\cdot v_{ds}$, where $\frac{\partial I_{D}}{V_{DS}}$ is equal unsurprisingly to $\mu C_{ox}\frac{W}{L}\left(V_{DS}-V_{T}\right)$.
+If there are no AC variations in the gate-to-source voltage, the overall drain current equations reduces to this form: $i_{D}=I_{D}+i_{d}=I_{D}+g_{ds}\cdot v_{ds}= I_{D}+\frac{\partial I_{D}}{\partial V_{DS}}\cdot v_{ds}$, where $\frac{\partial I_{D}}{\partial V_{DS}}$ is equal unsurprisingly to $\mu C_{ox}\frac{W}{L}\left(V_{DS}-V_{T}\right)$.
 <br>
 <br>
 After all is said and done, the overarching equation for the FET when biased in the deep triode region and supplied at its drain with a small AC signal looks like this:
