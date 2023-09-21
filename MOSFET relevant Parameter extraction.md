@@ -9,7 +9,7 @@ To determine its formula and value we need to take the partial derivative of $I_
 So instead of taking the derivative we will be calculating the slope of the curve, as we assume the IV characteristic of the FET to be mostly linear. After all, should we take two point infinitesimally close to each other, the resulting slope would have the same value as the derivative.
 
 Note that for the parameter extraction we'll be doing, the selected transistor will be an IRF830.
-## Measuring $V_{T}$
+## Measuring VT
 Threshold voltage can be defined in many ways, it all depends on what "threshold" current we decide to set as a benchmark.
 
 I attempted to determine the value of $V_{T}$ with the help of several distinct testing methods:
@@ -136,7 +136,7 @@ $$ V_{T} = \frac{ -2 (V_{GS2} I_{D1} - V_{GS1} I_{D2} ) }{ 2 (I_{D2} - I_{D1}) }
 
 After we numerically determine the solutions, we check that $V_{T}$ is to the left of both $V_{GS}$ values used.
 
-## Determination of Channel Length Modulation Factor " $\lambda$ "
+## Determination of Channel Length Modulation Factor
 To find the value of $\lambda$ we pick two bias points inside the saturation region and create a system of two equations and one unknown, the CLM Factor. We keep $V_{GS}$ constant and sweep $V_{DS}$ to find the two suitable measurement points.
 
 $$\begin{cases}
