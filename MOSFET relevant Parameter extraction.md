@@ -36,6 +36,8 @@ The output current of the source is dictated by the resistance, which for a desi
 In our specific example the potentiometer was set to 2.922 $K\Omega$ and $I_{D}$ reached 255.6 $\mu A$, giving us the value of the threshold voltage as $V_{T}$ = 2.97V.
 
 #### Notes on alternative arrangements for a CCS
+**A great discussion on measuring MOSFET threshold voltage cand be found <a href="https://electronics.stackexchange.com/questions/678122/experimental-and-theoretical-determination-of-mosfet-threshold-voltage">here</a>. I've used it as inspiration for this section of my write-up and for checking my own efforts at deriving the threshold voltage.**
+
 An active device is not always required for this method, as a quicker, bench-friendlier method is to just measure $V_{GS}$ when the FET is supplied through a 0.1/1/10 $M\Omega$ resistor and the current is closer to another industry-standard current benchmark: $I_{test}=100 nA\cdot \frac{W}{L}$
 
 <p height = "250" align="center">
@@ -164,6 +166,7 @@ For a quick and dirty solution, we just bias the FET into the saturation region 
 
 ## Sources and Useful Resources
 - https://www.scirp.org/journal/paperinformation.aspx?paperid=72393
+- https://electronics.stackexchange.com/questions/678122/experimental-and-theoretical-determination-of-mosfet-threshold-voltage
 - http://web02.gonzaga.edu/faculty/talarico/EE303/HO/squarelawIssues.pdf
 - https://2n3904blog.com/sub-threshold-conduction-of-a-power-mosfet/
 - https://www.slideshare.net/dsvidhya/chapter3-49826795
